@@ -1,0 +1,24 @@
+APP: "jupiter"
+MODE: "release"
+
+LOG: 
+  LOGFILE: "/data/log/gops/jupiter/app.log"
+  ACCESSLOGFILE: "/data/log/gops/jupiter/access.log"
+
+HTTP: 
+  LISTEN: ":9002"
+
+RPC:
+  LISTEN: ":9012"
+
+MYSQL: 
+  addr: "root:Passw0rd@tcp(127.0.0.1:3306)/mars?charset=utf8&parseTime=true&loc=Local"
+  maxConns: 1000
+  maxIdle: 100
+
+# 默认sn存储用户中文名
+LDAP:
+  url: "ldap://192.168.176.131:389"
+  binddn: "cn=Manager,dc=icsoc,dc=net"
+  dnpass: "password"
+  userprefixdn: "ou=People,dc=icsoc,dc=net"
