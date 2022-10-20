@@ -24,5 +24,8 @@
 |jupiter|用户权限管理项目|
 |mars|部署系统、产品线管理项目|
 
+## 安装部署
+[安装部署文档](https://ztth.gitbook.io/gops/install)
+
 ## 技术交流群
 ![交流群](./imgs/wxq.png)
