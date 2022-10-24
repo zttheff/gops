@@ -15,8 +15,8 @@ SECRECT: "ewoJImF1dGhzIjogewoJCSIxNzIuMjUuMi4xNzQiOiB7CgkJCSJhdXRoIjogIllXUnRhVz
 
 # 日志配置
 LOG:
-  LOGFILE: "/tmp/log/mars/app.log"
-  ACCESSLOGFILE: "/tmp/log/mars/access.log"
+  LOGFILE: "/data/log/gops/mars/app.log"
+  ACCESSLOGFILE: "/data/log//gops/mars/access.log"
 
 #应用http监听接口
 HTTP:
