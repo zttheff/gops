@@ -1,29 +1,22 @@
 APP: "mars"
-
-# release
 MODE: "release"
+
+# 容器部署
+CONTAINER: false
 
 # 组织名称 服务树初始节点
 ORGANIZATION: "icsoc" 
 # 树节点组织展示的名称
-LABEL: "中通天鸿"
+LABEL: "中通天鸿" #组织中文名
 
-# 镜像仓库
-HARBOR: true
-# HARBOR镜像仓库地址
-REGISTRY: "http://172.25.2.174" 
-# HARBOR认证用户
-AUTHKEY: "admin"
-# HARBOR认证密码
-AUTHPASS: "Harbor12345"
 
 # 用于自动生成命名空间下secret 拉取docker认证配置 编译机上执行: cat ~/.docker/config.json | base64 -w 0
-SECRECT: ""
+SECRECT: "ewoJImF1dGhzIjogewoJCSIxNzIuMjUuMi4xNzQiOiB7CgkJCSJhdXRoIjogIllXUnRhVzQ2U0dGeVltOXlNVEl6TkRVPSIKCQl9Cgl9LAoJIkh0dHBIZWFkZXJzIjogewoJCSJVc2VyLUFnZW50IjogIkRvY2tlci1DbGllbnQvMTguMDkuOSAobGludXgpIgoJfQp9"
 
 # 日志配置
 LOG:
-  LOGFILE: "/data/log/gops/mars/app.log"
-  ACCESSLOGFILE: "/data/log/gops/mars/access.log"
+  LOGFILE: "/tmp/log/mars/app.log"
+  ACCESSLOGFILE: "/tmp/log/mars/access.log"
 
 #应用http监听接口
 HTTP:
@@ -40,9 +33,7 @@ MYSQL:
 
 # CI配置
 CI:
-  # Gitlab免密ssh协议认证私钥
-  key: "/root/.ssh/id_rsa_gitlab" 
-  # ci编译路径
+  # 编译路径
   cp: "/tmp/ci"
 
-  
+
