@@ -1,5 +1,5 @@
 APP: "jupiter"
-MODE: "debug"
+MODE: "release"
 LOG: 
   LOGFILE: "/data/log/jupiter/app.log"
   ACCESSLOGFILE: "/data/log/jupiter/access.log"

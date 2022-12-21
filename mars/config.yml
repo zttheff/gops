@@ -5,7 +5,7 @@ MODE: "release"
 # 组织名称 服务树初始节点
 ORGANIZATION: "icsoc" 
 # 树节点组织展示根节点名称
-LABEL: "中通天鸿" 
+LABEL: "天鸿云效" 
 
 
 # 用于自动生成命名空间下secret 拉取docker认证配置 编译机上执行: cat ~/.docker/config.json | base64 -w 0
@@ -32,6 +32,7 @@ MYSQL:
   maxConns: 1000
   maxIdle: 100
 
-
+CI:
+  cp: "/tmp/ci"
 
   

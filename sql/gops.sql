@@ -2,11 +2,11 @@ create database mars
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
-create database saturn
+create database jupiter
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
 
-create database jupiter
+create database saturn
   DEFAULT CHARACTER SET utf8
   DEFAULT COLLATE utf8_general_ci;
   

@@ -3,7 +3,7 @@
 ## 演示视频
 ![show](./imgs/show.gif)
 ## 平台优点
-![fethure](./imgs/feature.png)
+![feature](./imgs/feature.png)
 
 ## UI 展示
 ![ui](./imgs/login.png)
@@ -15,7 +15,8 @@
 |:--:|:--:|
 |fe|gops Web UI项目|
 |jupiter|用户权限管理项目|
-|mars|部署系统、产品线管理项目|
+|mars|部署系统、资产、产品线管理项目|
+|saturn|监控管理平台|
 
 ## 安装部署
 [安装部署文档](https://ztth.gitbook.io/gops/install)
