@@ -1,16 +1,9 @@
 # 天鸿云效发布系统
 ---
+## 演示视频
+![show](./imgs/show.gif)
 ## 平台优点
-
-> Gops 支持多语言构建、多kubernetes集群发版
-
-> Gops 采用Kubernetes api方式与集群信息交互
-
-> Gops 支持基于服务树方式管理产品线
-
-> Gops 灵活丰富的容器参数配置
-
-> Gops 集成了用户及权限点
+![fethure](./imgs/feature.png)
 
 ## UI 展示
 ![ui](./imgs/login.png)

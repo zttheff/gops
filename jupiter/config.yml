@@ -1,10 +1,8 @@
-app: "jupiter"
-mode: "release"
-# 容器部署
-CONTAINER: false
+APP: "jupiter"
+MODE: "debug"
 LOG: 
-  LOGFILE: "/data/log/gops/jupiter/app.log"
-  ACCESSLOGFILE: "/data/log/gops/jupiter/access.log"
+  LOGFILE: "/data/log/jupiter/app.log"
+  ACCESSLOGFILE: "/data/log/jupiter/access.log"
 
 HTTP: 
   LISTEN: ":9002"
