@@ -1,0 +1,101 @@
+services:
+  db:
+    # image: gops/mysql:v1
+    image: mysql:5.7.41-debian
+    container_name: gops-db
+    restart: always
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - type: bind
+        source: ${MYSQL_DATA_DIR}
+        target: /var/lib/mysql
+    ports: 
+      - "13306:3306"
+    cap_add:
+      - ALL
+
+  jupiter:
+    image: alpine:latest
+    container_name: gops-jupiter
+    # environment:
+    #   - HOST_IP=172.25.2.174
+    restart: always
+    ports:
+      - "9002:9002"
+      - "9012:9012"
+    cap_add:
+      - ALL
+    volumes:
+      - type: bind
+        source: ./jupiter/jupiter
+        target: /app/jupiter/jupiter
+      - type: bind
+        source: ./jupiter/config.yml
+        target: /app/jupiter/config.yml
+    command: /app/jupiter/jupiter start -c /app/jupiter/config.yml
+    depends_on:
+      - db
+  
+  mars:
+    image: alpine:latest
+    container_name: gops-mars
+    restart: always
+    ports:
+      - "9001:9001"
+      - "9013:9013"
+    cap_add:
+      - ALL
+    volumes:
+      - type: bind
+        source: ./mars/server/mars
+        target: /app/mars/mars
+      - type: bind
+        source: ./mars/server/config.yml
+        target: /app/mars/config.yml
+    command: /app/mars/mars start -c /app/mars/config.yml
+    depends_on:
+      - db
+      - jupiter
+  
+  saturn:
+    image: alpine:latest
+    container_name: gops-saturn
+    restart: always
+    ports:
+      - "9003:9003"
+    cap_add:
+      - ALL
+    volumes:
+      - type: bind
+        source: ./saturn/saturn
+        target: /app/saturn/saturn
+      - type: bind
+        source: ./saturn/config.yml
+        target: /app/saturn/config.yml
+    command: /app/saturn/saturn start -c /app/saturn/config.yml
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:1.22-alpine
+    container_name: gops-dashboard
+    restart: always
+    ports:
+      - "8181:80"
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - NET_BIND_SERVICE
+    volumes:
+      - type: bind
+        source: ./nginx/fe.conf
+        target: /etc/nginx/conf.d/fe.conf
+      - type: bind
+        source: ./fe
+        target: /var/www/fe
+      
+    
