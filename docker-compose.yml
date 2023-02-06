@@ -1,7 +1,8 @@
 services:
   db:
     # image: gops/mysql:v1
-    image: mysql:5.7.41-debian
+    # image: mysql:5.7.41-debian
+    image: mysql:arm64v8
     container_name: gops-db
     restart: always
     environment:
