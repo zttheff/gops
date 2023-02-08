@@ -1,7 +1,7 @@
 app: "saturn"
 mode: "release"
 DEBUG: false
-CONTAINER: true
+container: true
 #系统启动会生成默认策略
 defaultStrategyId: 1 
 # 钉钉、企业微信、飞书告警消息中带出的静默地址,监控平台saturn的地址

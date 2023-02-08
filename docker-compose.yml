@@ -18,8 +18,6 @@ services:
   jupiter:
     image: alpine:latest
     container_name: gops-jupiter
-    # environment:
-    #   - HOST_IP=172.25.2.174
     restart: always
     ports:
       - "9002:9002"
