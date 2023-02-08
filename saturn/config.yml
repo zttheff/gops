@@ -1,7 +1,7 @@
 app: "saturn"
 mode: "release"
 DEBUG: false
-container: false
+container: true
 #系统启动会生成默认策略
 defaultStrategyId: 1 
 # 钉钉、企业微信、飞书告警消息中带出的静默地址,监控平台saturn的地址
@@ -16,14 +16,14 @@ http:
 
 # 用户管理平台,rpc调用获取用户信息用于告警
 JUPITER: 
-  - "127.0.0.1:9012"
+  - "gops-jupiter:9012"
 
 # 产品线管理平台，rpc调用获取告警产品线信息
 MARS:
-  - "127.0.0.1:9013"
+  - "gops-mars:9013"
 
 mysql: 
-  addr: "root:Passw0rd@tcp(127.0.0.1:3306)/saturn?charset=utf8&parseTime=true&loc=Local"
+  addr: "hiops:Passw0rd@tcp(gops-db:3306)/saturn?charset=utf8&parseTime=true&loc=Local"
   maxConns: 1000
   maxIdle: 100
 

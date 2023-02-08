@@ -1,0 +1,11 @@
+APP: "mars client"
+# release
+MODE: "release"
+
+
+# 日志配置
+LOG:
+  LOGFILE: "/tmp/log/mars/client.log"
+
+# 构建路径
+BUILDPATH: "/tmp/ci"

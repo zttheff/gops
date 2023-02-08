@@ -1,5 +1,6 @@
 APP: "jupiter"
 MODE: "release"
+CONTAINER: true
 LOG: 
   LOGFILE: "/data/log/jupiter/app.log"
   ACCESSLOGFILE: "/data/log/jupiter/access.log"
@@ -11,7 +12,7 @@ RPC:
   LISTEN: ":9012"
 
 MYSQL: 
-  addr: "root:Passw0rd@/jupiter?charset=utf8&parseTime=true&loc=Local"
+  addr: "hiops:Passw0rd@tcp(gops-db:3306)/jupiter?charset=utf8&parseTime=true&loc=Local"
   maxConns: 1000
   maxIdle: 100
 
