@@ -14,6 +14,7 @@ blue=$(tput setaf 25)
 # Headers and Logging
 #
 
+#set -x
 underline() { printf "${underline}${bold}%s${reset}\n" "$@"
 }
 h1() { printf "\n${underline}${bold}${blue}%s${reset}\n" "$@"
@@ -35,7 +36,7 @@ bold() { printf "${bold}%s${reset}\n" "$@"
 note() { printf "\n${underline}${bold}${blue}Note:${reset} ${blue}%s${reset}\n" "$@"
 }
 
-HOST_IP="127.0.0.1"
+HOST_IP="localhost"
 
 # if [[ -z $HOST_IP ]];
 # then
@@ -129,14 +130,14 @@ function install(){
 
   # 等待gops-db启动
   note "wait gops-db start ....."
-  sleep 20
+  sleep 30
 
   # 初始化用户和数据库
   info "initialize default user password and default database schemas"
-  mysql  -h$HOST_IP -P13306 -e "show databases" | grep -q jupiter
+  /usr/local/bin/mysql   -uroot  -P13306 --protocol=tcp -e "show databases" | grep -q jupiter
   if [ $? -eq 1 ];then
-  mysql -h$HOST_IP -P13306 < ./sql/schema.sql
-  mysql -h$HOST_IP -P13306 < ./sql/privileges.sql
+  mysql -uroot  -P13306  --protocol=tcp < ./sql/schema.sql
+  mysql -uroot -P13306  --protocol=tcp < ./sql/privileges.sql
   fi
 
   nohup ./mars/client/mars-client start -a 0.0.0.0 -p 9000 -c mars/client/config.yml >> mars/client/output.log 2>&1 &
