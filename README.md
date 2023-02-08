@@ -19,6 +19,31 @@
 |saturn|监控管理平台|
 
 ## 安装部署
+- 容器部署
+  ```
+  依赖 Docker Compose 2.0+
+  执行安装脚本:
+  安装: ./gops.sh install
+
+  Note: docker version: 18.09.9
+  Note: docker-compose version: 2.10.2
+  Gops Deployment Management Script
+
+  Usage:
+    ./gops.sh [COMMAND] [ARGS...]
+
+  Installation Commands:
+    install           Install gops
+
+  Management Commands:
+    start             Start   gops docker containers
+    stop              Stop    gops docker containers
+    rm                rm      gops docker containers
+  docker ps | grep gops
+  ```
+  ![docker_proces](./imgs/docker_process.jpg)
+  浏览器访问：http://127.0.0.1:8181
+- 物理机部署
 [安装部署文档](https://ztth.gitbook.io/gops/install)
 
 ## 技术交流群
