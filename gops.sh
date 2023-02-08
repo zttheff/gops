@@ -134,10 +134,10 @@ function install(){
 
   # 初始化用户和数据库
   info "initialize default user password and default database schemas"
-  mysql   -uroot  -P13306 --protocol=tcp -e "show databases" | grep -q jupiter
+  mysql   -uroot  -P13306 -e "show databases" | grep -q jupiter
   if [ $? -eq 1 ];then
-  mysql -uroot  -P13306  --protocol=tcp < ./sql/schema.sql
-  mysql -uroot -P13306  --protocol=tcp < ./sql/privileges.sql
+  mysql -uroot  -P13306 < ./sql/schema.sql
+  mysql -uroot -P13306  < ./sql/privileges.sql
   fi
 
   nohup ./mars/client/mars-client start -a 0.0.0.0 -p 9000 -c mars/client/config.yml >> mars/client/output.log 2>&1 &
