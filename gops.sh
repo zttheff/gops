@@ -134,7 +134,7 @@ function install(){
 
   # 初始化用户和数据库
   info "initialize default user password and default database schemas"
-  /usr/local/bin/mysql   -uroot  -P13306 --protocol=tcp -e "show databases" | grep -q jupiter
+  mysql   -uroot  -P13306 --protocol=tcp -e "show databases" | grep -q jupiter
   if [ $? -eq 1 ];then
   mysql -uroot  -P13306  --protocol=tcp < ./sql/schema.sql
   mysql -uroot -P13306  --protocol=tcp < ./sql/privileges.sql
