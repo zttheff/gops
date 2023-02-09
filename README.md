@@ -42,6 +42,8 @@
   docker ps | grep gops
   ```
   ![docker_proces](./imgs/docker_process.jpg)
+  docker logs gops-jupiter 查看初始登录账号密码
+
   浏览器访问：http://127.0.0.1:8181
 - 物理机部署
 [安装部署文档](https://ztth.gitbook.io/gops/install)
