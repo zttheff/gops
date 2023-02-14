@@ -1,3 +1,3 @@
 {
-    "WEB_SSH_URL": "ws://gops-mars:9001"
+    "WEB_SSH_URL": "ws://172.25.2.174:9001"
 }

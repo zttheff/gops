@@ -1,5 +1,9 @@
 # 天鸿云效发布系统
 ---
+## 安装视频
+![install](./imgs/install.gif)
+## Web SSH
+![webssh](./imgs/webssh.gif)
 ## 演示视频
 ![show](./imgs/show.gif)
 ## 平台优点
@@ -45,6 +49,10 @@
   docker logs gops-jupiter 查看初始登录账号密码
 
   浏览器访问：http://127.0.0.1:8181
+  web ssh 功能： 修改fe/config/config.json 改为容器宿主机的主机ip
+  {
+    "WEB_SSH_URL": "ws://172.25.2.174:9001"
+  }
 - 物理机部署
 [安装部署文档](https://ztth.gitbook.io/gops/install)
 
