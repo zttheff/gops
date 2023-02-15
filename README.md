@@ -56,5 +56,7 @@
 - 物理机部署
 [安装部署文档](https://ztth.gitbook.io/gops/install)
 
+## 演示视频无法显示请移步到[gitee](https://gitee.com/zttheff/gops)
+
 ## 技术交流群
 ![交流群](./imgs/wxq.png)
