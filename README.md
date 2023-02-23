@@ -44,8 +44,12 @@
     stop              Stop    gops docker containers
     rm                rm      gops docker containers
   docker ps | grep gops
+9fb6c1f6276b        alpine:latest                            "/app/mars/mars star…"   8 days ago          Up 8 days              0.0.0.0:9001->9001/tcp, 0.0.0.0:9013->9013/tcp   gops-mars
+dd28cdba213f        alpine:latest                            "/app/jupiter/jupite…"   8 days ago          Up 8 days              0.0.0.0:9002->9002/tcp, 0.0.0.0:9012->9012/tcp   gops-jupiter
+d36289804dfe        alpine:latest                            "/app/saturn/saturn …"   8 days ago          Up 8 days              0.0.0.0:9003->9003/tcp                           gops-saturn
+94b0cec24101        mysql:5.7.41-debian                      "docker-entrypoint.s…"   8 days ago          Up 8 days              33060/tcp, 0.0.0.0:13306->3306/tcp               gops-db
+ae6310765673        nginx:1.22-alpine                        "/docker-entrypoint.…"   8 days ago          Up 8 days              0.0.0.0:8181->80/tcp                             gops-dashboard
   ```
-  ![docker_proces](./imgs/docker_process.jpg)
   docker logs gops-jupiter 查看初始登录账号密码
 
   浏览器访问：http://127.0.0.1:8181
@@ -60,3 +64,5 @@
 
 ## 技术交流群
 ![交流群](./imgs/wxq.png)
+## 电话咨询
+18600507588，18511898163
